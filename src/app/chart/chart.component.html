@@ -1,4 +1,4 @@
-<div nz-row nzJustify="center" nzAlign="top">
+<div nz-row nzJustify="center" nzAlign="top" class="chart-actions">
   <div nz-col>
     <nz-range-picker nzMode="month" [nzDefaultPickerValue]="chartDates" [(ngModel)]="date"
       (ngModelChange)="onChangeRangeHandler($event)" [nzDisabledDate]="disabledDate"></nz-range-picker>
@@ -11,9 +11,9 @@
     </nz-radio-group>
   </div>
   <div nz-col nzOffset = "2" >
-    <button nz-button nzType="primary" nzSize="large" nzShape="round" (click)="downloadImage()">
+    <button nz-button nzType="primary" nzSize="large" (click)="downloadImage()">
       <i nz-icon nzType="download"></i>
-      Download
+      Download Chart
     </button>
   </div>
 </div>

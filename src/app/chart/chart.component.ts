@@ -39,7 +39,7 @@ export class ChartComponent implements OnInit, OnChanges {
       this.chartData = this.chartDataSnapshot;
       this.initializeChart();
       this.drawChart();
-      
+
       window.addEventListener('resize', () => this.drawChart());
     }
   }
@@ -166,7 +166,7 @@ export class ChartComponent implements OnInit, OnChanges {
    * @name onChange
    * @desc handle date range and update chart according to date range
    * @param [startDate, endDate]
-   * @return {void} 
+   * @return {void}
    */
   onChangeRangeHandler([startDate, endDate]: Array<Date>): void {
     const data = this.chartDataSnapshot.filter((chart: IChart) => this.checkInDatesRange(chart.date, startDate, endDate))
@@ -178,9 +178,9 @@ export class ChartComponent implements OnInit, OnChanges {
   /**
    * @name checkInDatesRange
    * @desc check current date is in range of provided range
-   * @param currentDate 
-   * @param startDate 
-   * @param endDate 
+   * @param currentDate
+   * @param startDate
+   * @param endDate
    * @returns {boolean}
    */
   checkInDatesRange(currentDate: Date, startDate: Date, endDate: Date): boolean {
@@ -190,7 +190,7 @@ export class ChartComponent implements OnInit, OnChanges {
   /**
    * @name disabledDate
    * @desc disable out of range date in calender
-   * @param current 
+   * @param current
    * @returns {boolean}
    */
   disabledDate = (current: Date): boolean => {
@@ -226,7 +226,6 @@ export class ChartComponent implements OnInit, OnChanges {
    * @return {void}
    */
   chartChangeHandler(event: string): void {
-    console.log(this.selectedChart, event);
     this.selectedChart = event;
     this.initializeChart();
     this.drawChart();
